@@ -70,6 +70,9 @@ class _ContainerExampleState extends State<ContainerExample> {
 
 
   void populateCards() {
+
+    containers.clear();
+
     for (int i = 10; i >= 0; i--) {
       containers.add(
         ContainerModel(
@@ -80,6 +83,10 @@ class _ContainerExampleState extends State<ContainerExample> {
         )
       );
     }
+
+    setState(() {
+
+    });
   }
 
 
@@ -138,6 +145,11 @@ class _ContainerExampleState extends State<ContainerExample> {
             );
           }).toList(),
         ),
+      ),
+      floatingActionButton: FloatingActionButton(onPressed: () {
+        populateCards();
+      },
+        child: Icon(Icons.refresh),
       ),
     );
   }
